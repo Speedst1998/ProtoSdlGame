@@ -74,12 +74,12 @@ clean: CMakeFiles/ProtoSdlGame.dir/clean
 CMakeFiles/ProtoSdlGame.dir/all:
 	$(MAKE) -f CMakeFiles/ProtoSdlGame.dir/build.make CMakeFiles/ProtoSdlGame.dir/depend
 	$(MAKE) -f CMakeFiles/ProtoSdlGame.dir/build.make CMakeFiles/ProtoSdlGame.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/tahar/dev/proto-sdl/Debug/CMakeFiles --progress-num=1,2 "Built target ProtoSdlGame"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/tahar/dev/proto-sdl/Debug/CMakeFiles --progress-num=1,2,3 "Built target ProtoSdlGame"
 .PHONY : CMakeFiles/ProtoSdlGame.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/ProtoSdlGame.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/tahar/dev/proto-sdl/Debug/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/tahar/dev/proto-sdl/Debug/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/ProtoSdlGame.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/tahar/dev/proto-sdl/Debug/CMakeFiles 0
 .PHONY : CMakeFiles/ProtoSdlGame.dir/rule

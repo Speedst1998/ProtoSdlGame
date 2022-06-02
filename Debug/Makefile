@@ -123,6 +123,33 @@ ProtoSdlGame/fast:
 	$(MAKE) -f CMakeFiles/ProtoSdlGame.dir/build.make CMakeFiles/ProtoSdlGame.dir/build
 .PHONY : ProtoSdlGame/fast
 
+src/LTexture.o: src/LTexture.cpp.o
+
+.PHONY : src/LTexture.o
+
+# target to build an object file
+src/LTexture.cpp.o:
+	$(MAKE) -f CMakeFiles/ProtoSdlGame.dir/build.make CMakeFiles/ProtoSdlGame.dir/src/LTexture.cpp.o
+.PHONY : src/LTexture.cpp.o
+
+src/LTexture.i: src/LTexture.cpp.i
+
+.PHONY : src/LTexture.i
+
+# target to preprocess a source file
+src/LTexture.cpp.i:
+	$(MAKE) -f CMakeFiles/ProtoSdlGame.dir/build.make CMakeFiles/ProtoSdlGame.dir/src/LTexture.cpp.i
+.PHONY : src/LTexture.cpp.i
+
+src/LTexture.s: src/LTexture.cpp.s
+
+.PHONY : src/LTexture.s
+
+# target to generate assembly for a file
+src/LTexture.cpp.s:
+	$(MAKE) -f CMakeFiles/ProtoSdlGame.dir/build.make CMakeFiles/ProtoSdlGame.dir/src/LTexture.cpp.s
+.PHONY : src/LTexture.cpp.s
+
 src/main.o: src/main.cpp.o
 
 .PHONY : src/main.o
@@ -159,6 +186,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... ProtoSdlGame"
+	@echo "... src/LTexture.o"
+	@echo "... src/LTexture.i"
+	@echo "... src/LTexture.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/ProtoSdlGame.dir/src/LTexture.cpp.o"
   "CMakeFiles/ProtoSdlGame.dir/src/main.cpp.o"
   "ProtoSdlGame"
   "ProtoSdlGame.pdb"

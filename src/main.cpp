@@ -1,4 +1,5 @@
 // Using SDL and standard IO
+#include "LTexture.h"
 #include <SDL.h>
 #include <SDL_image.h>
 #include <stdio.h>
@@ -27,19 +28,8 @@ SDL_Window *gWindow = NULL;
 SDL_Renderer *gRenderer = NULL;
 
 // Current displayed texture
-SDL_Texture *gTexture = NULL;
-// Key press surfaces constants
-enum KeyPressSurfaces {
-  KEY_PRESS_SURFACE_DEFAULT,
-  KEY_PRESS_SURFACE_UP,
-  KEY_PRESS_SURFACE_DOWN,
-  KEY_PRESS_SURFACE_LEFT,
-  KEY_PRESS_SURFACE_RIGHT,
-  KEY_PRESS_SURFACE_TOTAL
-};
-
-SDL_Surface *gKeyPressSurfaces[KEY_PRESS_SURFACE_TOTAL];
-SDL_Surface *gCurrentSurface;
+LTexture *gBackgroundTexture = NULL;
+LTexture *gForegroundTexture = NULL;
 
 int main(int argc, char *args[]) {
   bool quit = false;
@@ -51,7 +41,6 @@ int main(int argc, char *args[]) {
     printf("Loading Media Failed :(\n ");
   } else {
 
-    gCurrentSurface = gKeyPressSurfaces[KEY_PRESS_SURFACE_DEFAULT];
     while (!quit) {
 
       while (SDL_PollEvent(&e) != 0) {
@@ -61,7 +50,8 @@ int main(int argc, char *args[]) {
       }
 
       SDL_RenderClear(gRenderer);
-      SDL_RenderCopy(gRenderer, gTexture, NULL, NULL);
+      gBackgroundTexture->render(0, 0);
+      gForegroundTexture->render(240, 190);
       SDL_RenderPresent(gRenderer);
     }
   }
@@ -97,6 +87,8 @@ bool init() {
 
     printf("Created Renderer.\n");
 
+    gForegroundTexture = new LTexture(gRenderer);
+    gBackgroundTexture = new LTexture(gRenderer);
     SDL_SetRenderDrawColor(gRenderer, 0xFF, 0xFF, 0xFF, 0xFF);
 
     int imgFlags = IMG_INIT_PNG;
@@ -113,20 +105,29 @@ bool init() {
 
 bool loadMedia() {
   bool success = true;
-  gTexture = loadTexture("resources/07_texture_loading_and_rendering/texture.png");
-  if(gTexture == NULL){
-      
-      printf("Could not load media ! SDL Error: %s\n",
-             IMG_GetError());
 
+  // Load Foo' texture
+  if (!gForegroundTexture->loadFromFile("resources/10_color_keying/foo.png")) {
+    printf("Failed to load Foo' texture image!\n");
+    success = false;
   }
+
+  // Load background texture
+  if (!gBackgroundTexture->loadFromFile("resources/10_color_keying/background.png")) {
+    printf("Failed to load background texture image!\n");
+    success = false;
+  }
+
   return success;
 }
 
 void close() {
 
-  SDL_DestroyTexture(gTexture);
-  gTexture = NULL;
+  gForegroundTexture->free();
+  gForegroundTexture = NULL;
+
+  gBackgroundTexture->free();
+  gBackgroundTexture = NULL;
 
   SDL_DestroyRenderer(gRenderer);
   gRenderer = NULL;
@@ -136,6 +137,7 @@ void close() {
   gWindow = NULL;
 
   // Quit SDL subsystems
+  IMG_Quit();
   SDL_Quit();
 }
 
@@ -151,7 +153,8 @@ SDL_Texture *loadTexture(std::string path) {
   } else {
     texture = SDL_CreateTextureFromSurface(gRenderer, surface);
     if (texture == NULL) {
-      printf("Unable to create texture from %s! SDL Error: %s\n", path.c_str(), SDL_GetError() );
+      printf("Unable to create texture from %s! SDL Error: %s\n", path.c_str(),
+             SDL_GetError());
       return NULL;
     }
   }

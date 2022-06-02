@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/tahar/dev/proto-sdl/src/LTexture.cpp" "/home/tahar/dev/proto-sdl/Debug/CMakeFiles/ProtoSdlGame.dir/src/LTexture.cpp.o"
   "/home/tahar/dev/proto-sdl/src/main.cpp" "/home/tahar/dev/proto-sdl/Debug/CMakeFiles/ProtoSdlGame.dir/src/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

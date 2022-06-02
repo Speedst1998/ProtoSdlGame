@@ -215,9 +215,6 @@ ProtoSdlGame_BINARY_DIR:STATIC=/home/tahar/dev/proto-sdl/Debug
 //Value Computed by CMake
 ProtoSdlGame_SOURCE_DIR:STATIC=/home/tahar/dev/proto-sdl
 
-//The directory containing a CMake configuration file for SDL2IMAGE.
-SDL2IMAGE_DIR:PATH=SDL2IMAGE_DIR-NOTFOUND
-
 //The directory containing a CMake configuration file for SDL2.
 SDL2_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/SDL2
 
@@ -226,9 +223,6 @@ SDL2_IMAGE_INCLUDE_DIR:PATH=/usr/include/SDL2
 
 //Path to a library.
 SDL2_IMAGE_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libSDL2_image.so
-
-//The directory containing a CMake configuration file for SDL2_image.
-SDL2_image_DIR:PATH=SDL2_image_DIR-NOTFOUND
 
 
 ########################

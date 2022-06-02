@@ -1,6 +1,11 @@
 [
 {
   "directory": "/home/tahar/dev/proto-sdl/Debug",
+  "command": "/usr/bin/c++   -I/home/tahar/dev/proto-sdl/ProtoSdlGame -I/usr/include/SDL2 -I/home/tahar/dev/proto-sdl/src  -g   -o CMakeFiles/ProtoSdlGame.dir/src/LTexture.cpp.o -c /home/tahar/dev/proto-sdl/src/LTexture.cpp",
+  "file": "/home/tahar/dev/proto-sdl/src/LTexture.cpp"
+},
+{
+  "directory": "/home/tahar/dev/proto-sdl/Debug",
   "command": "/usr/bin/c++   -I/home/tahar/dev/proto-sdl/ProtoSdlGame -I/usr/include/SDL2 -I/home/tahar/dev/proto-sdl/src  -g   -o CMakeFiles/ProtoSdlGame.dir/src/main.cpp.o -c /home/tahar/dev/proto-sdl/src/main.cpp",
   "file": "/home/tahar/dev/proto-sdl/src/main.cpp"
 }
