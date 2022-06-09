@@ -18,7 +18,7 @@ class LTexture
         void free();
 
         //Renders texture at given point
-        void render( int x, int y );
+        void render( int x, int y, SDL_Rect *clip );
 
         //Gets image dimensions
         int getWidth();

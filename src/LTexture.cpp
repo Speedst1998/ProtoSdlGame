@@ -53,9 +53,14 @@ void LTexture::free() {
 }
 
 // Renders texture at given point
-void LTexture::render(int x, int y) {
-  SDL_Rect rect = {x, y, mWidth, mHeight};
-  SDL_RenderCopy(renderer, mTexture, NULL, &rect);
+void LTexture::render(int x, int y, SDL_Rect *clip) {
+  SDL_Rect destRect = {x, y, mWidth, mHeight};
+
+  if(clip != NULL){
+    destRect.h = clip->h;
+    destRect.w = clip->w;
+  }
+  SDL_RenderCopy(renderer, mTexture, clip, &destRect);
 }
 
 // Gets image dimensions
